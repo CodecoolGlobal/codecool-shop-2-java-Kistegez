@@ -65,6 +65,7 @@ function setupEventListeners() {
     document.getElementById("register").addEventListener("click",registration)
     document.getElementById("login").addEventListener("click",login)
     document.getElementById("logout").addEventListener("click",logout)
+    document.getElementById("save-details").addEventListener("click", saveDetails)
 
 }
 
@@ -146,6 +147,7 @@ function checkUserInSession() {
         document.getElementById("login-modal").style.display = "none"
         document.getElementById("register-modal").style.display = "none"
         document.getElementById("logout").style.display = "block"
+        document.getElementById("details").style.display = "block"
 
     } else {
         document.getElementById("login-modal").style.display = "block"
@@ -154,5 +156,17 @@ function checkUserInSession() {
         document.getElementById("user-name").style.display = "none"
         document.getElementById("name-place").innerText = ""
         }
+}
+
+async function saveDetails() {
+    let firstName = document.getElementById("first-name").value
+    let lastName = document.getElementById("last-name").value
+    let city = document.getElementById("city").value
+    let address = document.getElementById("address").value
+    let phone = document.getElementById("phone").value
+    let userId = localStorage.getItem("user_id")
+    document.getElementById("det-close").click()
+    let details = await postResponse("/api/details", {"userId":userId, "fist_name": firstName, "last_name": lastName, "city": city, "address": address, "phone": phone})
+    console.log(details)
 }
 

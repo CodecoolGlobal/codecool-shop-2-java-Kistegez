@@ -58,5 +58,23 @@ public class UserDaoJdbc implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public User update(Integer userId, String firstName, String lastName, String city, String address, Integer phone) {
+        try(Connection connection = dataSource.getConnection()){
+            String sql = "UPDATE shop_user SET first_name = ?, last_name = ?, city = ?, address = ?, phone_number=? WHERE id = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, firstName);
+            st.setString(2, lastName);
+            st.setString(3, city);
+            st.setString(4, address);
+            st.setInt(5, phone);
+            st.setInt(2, userId);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }
 

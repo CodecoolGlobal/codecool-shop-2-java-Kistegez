@@ -32,7 +32,6 @@ public class RegistrationServlet extends HttpServlet {
         String userName = userTemplate.getName();
         String email = userTemplate.getEmail();
         String password = userTemplate.getPassword();
-        System.out.println(userName);
         UserService userService = UserService.getInstance();
         userService.add(new User(userName, email, password));
 

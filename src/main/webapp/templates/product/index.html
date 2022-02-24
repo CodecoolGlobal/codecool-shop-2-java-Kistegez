@@ -69,11 +69,13 @@
         </button>
         <span style="display: none" id="user-name"> <b id="name-place"></b></span>
         <button type="button" id="logout" class="btn btn-primary btn-sm" style="display: none">Logout</button>
+        <button type="button" id="details" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#detailsModal" style="display: none">Save details</button>
     </div>
 
     <div th:replace="product/cart_modal.html :: copy"></div>
     <div th:replace="product/register_modal.html :: copy3"></div>
     <div th:replace="product/login_modal.html :: copy4"></div>
+    <div th:replace="product/details_modal.html :: copy5"></div>
 
     <div class="product_container">
     <div id="products" class="row">

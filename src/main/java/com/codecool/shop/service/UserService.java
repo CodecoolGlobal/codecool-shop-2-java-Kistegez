@@ -27,6 +27,10 @@ public class UserService {
     public User find(String name, String password){
         return userDao.find(name, password);
     }
+
+    public User update(String userId, String firstName, String lastName, String city, String address, String phone) {
+        return userDao.update(Integer.parseInt(userId), firstName, lastName, city, address, Integer.parseInt(phone));
+    }
 }
 
 

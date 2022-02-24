@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<script type="module" src='/static/js/main.js' defer></script>
+<script type="module" src='/static/js/controller.js' defer></script>
+<script type="module" src='/static/js/dataHandler.js' defer></script>
+<script type="module" src='/static/js/view.js' defer></script>
+<div th:fragment="copy5" class="container">
+    <div id="cart-div">
+    </div>
+
+    <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel" style="text-align: center">
+                        Details
+                    </h5><br>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="details-input">
+                    <label for="first-name"><b>First name</b></label>
+                    <input type="text" placeholder="First name" name="first-name" id="first-name" size="30" value="" required><br>
+
+                    <label for="last-name"><b>Last name</b></label>
+                    <input type="text" placeholder="Last name" name="last-name" id="last-name" size="30" value="" required><br>
+
+                    <label for="city"><b>City</b></label>
+                    <input type="text" placeholder="City" name="city" id="city" value="" size="30" required>
+
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" placeholder="Address" name="address" id="address" value="" size="30" required>
+
+                    <label for="phone"><b>Phone number</b></label>
+                    <input type="text" placeholder="Phone number" name="phone" id="phone" value="" size="30" required>
+                </div>
+                <div class="modal-footer border-top-0 d-flex justify-content-between">
+                    <button type="button" class="close-button" id="det-close" data-dismiss="modal">Close</button>
+                    <button id="save-details"  type="button" class="btn btn-success">Save</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

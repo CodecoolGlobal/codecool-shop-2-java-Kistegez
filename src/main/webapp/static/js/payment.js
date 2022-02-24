@@ -1,3 +1,5 @@
+
+
 let totalPrice = 0;
 let previousCost = 0;
 
@@ -68,6 +70,11 @@ return `<tr>
             <td>${data.name}</td> 
             <td id=${"product-total" + data.id} data-default-price=${data.defaultPrice} class="product-total-price" data-default-currency=${data.defaultCurrency}>${(data.defaultPrice * data.amount).toFixed(2)} ${data.defaultCurrency}</td>
         </tr>`
+}
+
+function loadDetails(details) {
+    console.log(details)
+
 }
 
 showCart();
